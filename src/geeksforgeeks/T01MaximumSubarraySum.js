@@ -19,17 +19,17 @@ function MaximumSubarraySum(arr) {
 // console.log(MaximumSubarraySum([1, 2, 3, -2, 5]));
 
 function MaximumSubarraySumWithKadanesMethod(arr) {
-  let maxSoFor = arr[0];
+  let res = arr[0];
   let maxEndingHere = arr[0];
   for (let j = 1; j < arr.length; j++) {
     maxEndingHere = Math.max(arr[j], maxEndingHere + arr[j]);
-    maxSoFor = Math.max(maxSoFor, maxEndingHere);
+    res = Math.max(res, maxEndingHere);
 
     console.log("maxEndingHere ===> ", maxEndingHere);
-    console.log("maxSoFor ===> ", maxSoFor);
+    console.log("res ===> ", res);
   }
 
-  return maxSoFor;
+  return res;
 }
 
 console.log(MaximumSubarraySumWithKadanesMethod([2, 3, -8, 7, -1, 2, 3])); // 11

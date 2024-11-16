@@ -222,9 +222,28 @@ const flattenArray = (arr, result = []) => {
   }
   return result;
 };
-console.log("---------------------------------------");
-console.log("flattenArray");
-console.log(flattenArray([1, [2, [3, [4, [5, [6, [7, 8]]]]]]]));
+// console.log("---------------------------------------");
+// console.log("flattenArray");
+// console.log(flattenArray([1, [2, [3, [4, [5, [6, [7, 8]]]]]]]));
+
+// find duplicate and count
+const stringFindDuplicate = (str) => {
+  const arr = str.split("");
+  const countEach = [];
+  const map = new Map();
+  for (let j = 0; j < arr.length; j++) {
+    if (map.has(arr[j])) {
+      map.set(arr[j], map.get(arr[j]) + 1);
+      countEach[arr[j]] = map.get(arr[j]);
+    } else {
+      map.set(arr[j], 1);
+    }
+  }
+  console.log("countEach ===> ", countEach["a"], countEach);
+  return map;
+};
+
+console.log(stringFindDuplicate("abcdabrrddz"));
 
 // const a = new Node("A");
 // const b = new Node("B");

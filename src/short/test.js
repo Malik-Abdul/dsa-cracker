@@ -243,22 +243,33 @@ const stringFindDuplicate = (str) => {
   return map;
 };
 
-console.log(stringFindDuplicate("abcdabrrddz"));
+// console.log(stringFindDuplicate("abcdabrrddz"));
 
-// const a = new Node("A");
-// const b = new Node("B");
-// const c = new Node("C");
-// const d = new Node("D");
+const binarySearch = (arr, num, low, heigh) => {
+  if (low > heigh) {
+    return "Num Not Found";
+  }
+  let mid = Math.floor((low + heigh) / 2);
+  if (arr[mid] == num) {
+    return mid;
+  } else if (arr[mid] < num) {
+  }
+};
 
-// a.next = b;
-// b.next = c;
-// c.next = d;
+console.log("binarySearch");
+const binaryArray = [2, 44, 67, 900, 6899];
+// console.log(binarySearch(binaryArray, 900, 0, binaryArray.length - 1));
 
-// const printLinkList = (head) => {
-//   while (head != null) {
-//     console.log(head.value);
-//     head = head.next;
-//   }
-// };
+const maxumumSubArraySum = (arr) => {
+  // Given an array arr[], the task is to find the subarray that has the maximum sum and return its sum.
+  // KadanesMethod
+  let res = arr[0];
+  let resMaxLen = arr[0];
+  for (let j = 0; j < arr.length; j++) {
+    resMaxLen = Math.max(arr[j], arr[j] + resMaxLen);
+    res = Math.max(resMaxLen, res);
+  }
+  return res;
+};
 
-// printLinkList(a);
+console.log(maxumumSubArraySum([2, 3, -8, 7, -1, 2, 3]));

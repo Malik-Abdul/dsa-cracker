@@ -243,22 +243,17 @@ const stringFindDuplicate = (str) => {
   return map;
 };
 
-console.log(stringFindDuplicate("abcdabrrddz"));
+// console.log(stringFindDuplicate("abcdabrrddz"));
 
-// const a = new Node("A");
-// const b = new Node("B");
-// const c = new Node("C");
-// const d = new Node("D");
-
-// a.next = b;
-// b.next = c;
-// c.next = d;
-
-// const printLinkList = (head) => {
-//   while (head != null) {
-//     console.log(head.value);
-//     head = head.next;
-//   }
-// };
-
-// printLinkList(a);
+const MaximumSubarraySumKadanesAlgorithm = (arr) => {
+  let res = arr[0];
+  let maxEnd = arr[0];
+  for (let j = 1; j < arr.length; j++) {
+    maxEnd = Math.max(arr[j], arr[j] + maxEnd);
+    res = Math.max(maxEnd, res);
+  }
+  return res;
+};
+console.log(MaximumSubarraySumKadanesAlgorithm([2, 3, -8, 7, -1, 2, 3]));
+console.log(MaximumSubarraySumKadanesAlgorithm([5, 4, 1, 7, 8]));
+console.log(MaximumSubarraySumKadanesAlgorithm([1, 2, 3, -2, 5]));

@@ -254,6 +254,42 @@ const MaximumSubarraySumKadanesAlgorithm = (arr) => {
   }
   return res;
 };
-console.log(MaximumSubarraySumKadanesAlgorithm([2, 3, -8, 7, -1, 2, 3]));
-console.log(MaximumSubarraySumKadanesAlgorithm([5, 4, 1, 7, 8]));
-console.log(MaximumSubarraySumKadanesAlgorithm([1, 2, 3, -2, 5]));
+// console.log(MaximumSubarraySumKadanesAlgorithm([2, 3, -8, 7, -1, 2, 3]));
+// console.log(MaximumSubarraySumKadanesAlgorithm([5, 4, 1, 7, 8]));
+// console.log(MaximumSubarraySumKadanesAlgorithm([1, 2, 3, -2, 5]));
+
+// string reverse by words
+
+const stringReverseByWords = (str) => {
+  const arr = str.split(" ");
+  let strReverse = "";
+  for (let j = arr.length - 1; j >= 0; j--) {
+    strReverse += arr[j] + " ";
+  }
+  return strReverse;
+};
+
+// console.log(stringReverseByWords("I am a software Engineer"));
+
+const findFirstDistinctInString = (input) => {
+  let firstDistinctChar = "";
+  let str = input.toLowerCase();
+  str = str.split(" ").join("");
+  // console.log("str ===> ", str);
+  let obj = {};
+  for (let j = 0; j < str.length; j++) {
+    if (obj[str[j]]) {
+      obj[str[j]]++;
+    } else {
+      obj[str[j]] = 1;
+    }
+  }
+  for (let char in obj) {
+    if (obj[char] == 1) {
+      firstDistinctChar = char;
+      break;
+    }
+  }
+  return firstDistinctChar;
+};
+console.log(findFirstDistinctInString("I am a software Engineer"));

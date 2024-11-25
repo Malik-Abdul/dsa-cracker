@@ -275,7 +275,6 @@ const findFirstDistinctInString = (input) => {
   let firstDistinctChar = "";
   let str = input.toLowerCase();
   str = str.split(" ").join("");
-  // console.log("str ===> ", str);
   let obj = {};
   for (let j = 0; j < str.length; j++) {
     if (obj[str[j]]) {
@@ -292,4 +291,86 @@ const findFirstDistinctInString = (input) => {
   }
   return firstDistinctChar;
 };
-console.log(findFirstDistinctInString("I am a software Engineer"));
+// console.log(findFirstDistinctInString("I am a software Engineer"));
+
+const countCarryForwards = (n1, n2) => {
+  let carryCount = 0;
+  while (n1 > 0 && n2 > 0) {
+    let digit1Num1 = n1 % 10;
+    let digit1Num2 = n2 % 10;
+    let carry = 0;
+    let sum = digit1Num1 + digit1Num2;
+    if (sum > 9) {
+      carry = 1;
+      carryCount++;
+    }
+    n1 = Math.floor(n1 / 10);
+    n2 = Math.floor(n2 / 10);
+  }
+  return carryCount;
+};
+// console.log(countCarryForwards(678, 789));
+
+const addingTwoThreeOrMoreDigitsNumbers = (n1, n2) => {
+  let carryCount = 0;
+  let ans = "";
+  let carry = 0;
+  while (n1 > 0 || n2 > 0) {
+    let digit1Num1 = n1 % 10;
+    let digit1Num2 = n2 % 10;
+
+    let sum = digit1Num1 + digit1Num2 + carry;
+
+    if (sum > 9) {
+      carry = 1;
+      carryCount++;
+      sum = sum % 10;
+    } else {
+      carry = 0;
+    }
+    ans = sum + ans;
+    n1 = Math.floor(n1 / 10);
+    n2 = Math.floor(n2 / 10);
+  }
+  if (carry > 0) {
+    ans = carry + ans;
+  }
+  return ans;
+};
+// console.log(addingTwoThreeOrMoreDigitsNumbers(678, 789));
+// console.log(addingTwoThreeOrMoreDigitsNumbers(678, 45));
+
+const fibonacciFirstNEvenNumbers = (num, arr = [0, 1], even = []) => {
+  let sum = arr[arr.length - 1] + arr[arr.length - 2];
+  arr.push(sum);
+
+  if (sum % 2 == 0) {
+    even.push(sum);
+  }
+
+  if (even.length < num) {
+    return fibo(num, arr, even);
+  } else {
+    console.log(arr);
+    return even;
+  }
+};
+
+// console.log(fibonacciFirstNEvenNumbers(7));
+
+const fibonaciiItrative = (num) => {
+  let prevP = 0;
+  let prev = 1;
+  let arr = [];
+  arr.push(prevP);
+  arr.push(prev);
+  for (let j = 0; j < num - 2; j++) {
+    let next = prevP + prev;
+    arr.push(next);
+    prevP = prev;
+    prev = next;
+  }
+  return arr;
+};
+
+// console.log(fibonaciiItrative(7));

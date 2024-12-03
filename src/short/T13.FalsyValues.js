@@ -6,9 +6,10 @@
 // for (var i = 0; i < 3; i++) {
 //   //   setTimeout(() => console.log(i), 0);
 // }
+// setTimeout is asynchronous and var declares a function-scoped variable. By the time the setTimeout callbacks execute, the loop has already completed, and the value of i is 3
 
-// for (var j = 0; j < 3; j++) {
-//   setTimeout(() => console.log(j), 3000);
+// for (let i = 0; i < 3; i++) {
+//   //   setTimeout(() => console.log(i), 0);
 // }
 
 // Falsy Values

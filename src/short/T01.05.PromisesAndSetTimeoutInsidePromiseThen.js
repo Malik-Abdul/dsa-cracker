@@ -13,3 +13,9 @@ setTimeout(() => {
 }, 0);
 
 console.log("End");
+
+// start
+// end
+// Inside Promise
+// End Timeout
+// Inside Timeout

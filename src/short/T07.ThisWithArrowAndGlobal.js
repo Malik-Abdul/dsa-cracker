@@ -2,12 +2,11 @@ var count = 20;
 const obj = {
   count: 10,
   increment: () => this.count++,
-  // Arrow functions in JavaScript do not have their own this context. Instead, they inherit this from the surrounding lexical scope where they are defined.
 };
+console.log(obj.count); // 10
 obj.increment();
-
-// console.log(obj.count); // 10
-// console.log(count); // 21 // in browser
+console.log(count); //20
+console.log(obj.count); // 11
 
 // can be resolved as this way
 

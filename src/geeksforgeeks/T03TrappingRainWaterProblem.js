@@ -1,3 +1,4 @@
+// https://www.geeksforgeeks.org/trapping-rain-water/?ref=header_outind
 function TrappingRainWaterProblem(arr) {
   const min = arr[0];
   const max = arr[arr.length - 1];

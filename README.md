@@ -19,6 +19,7 @@
 1. [T01.Leetcode.1.TwoSum.js](https://github.com/Malik-Abdul/dsa-cracker/blob/main/src/leetcode/T01.Leetcode.1.TwoSum.js)
 2. [T02.Leetcode.179.LargestNumber.js](https://github.com/Malik-Abdul/dsa-cracker/blob/main/src/leetcode/T02.Leetcode.179.LargestNumber.js)
 3. [T03.Leetcode.2623.Memoize.js](https://github.com/Malik-Abdul/dsa-cracker/blob/main/src/leetcode/T03.Leetcode.2623.Memoize.js)
+4. [T04.Leetcode.26.RemoveDuplicates.js](https://github.com/Malik-Abdul/dsa-cracker/blob/main/src/leetcode/T04.Leetcode.26.RemoveDuplicates.js)
 
 ## geeksforgeeks interview questions
 

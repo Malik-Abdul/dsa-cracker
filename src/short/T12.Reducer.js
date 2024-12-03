@@ -1,8 +1,8 @@
-// console.log([1, 2, 3].reduce((x, y) => x + y)); // 6
-// console.log([1, 2, 3].reduce((x, y) => x + y, 2)); // 8
+// console.log([1, 2, 3].reduce((x, y) => x + y));
+// console.log([1, 2, 3].reduce((x, y) => x + y, 2));
 
-// console.log([1, 2, 3].reduce((x, y) => x * y)); // 6
-// console.log([1, 2, 3].reduce((x, y) => x * y, 0)); // 0
+// console.log([1, 2, 3].reduce((x, y) => x * y));
+// console.log([1, 2, 3].reduce((x, y) => x * y, 0));
 
 const max = (a, b) => {
   console.log(a, b);

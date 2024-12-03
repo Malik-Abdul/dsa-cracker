@@ -16,3 +16,5 @@ Promise.resolve()
   });
 
 console.log("6");
+
+// 1, 6, 4,5,2,3

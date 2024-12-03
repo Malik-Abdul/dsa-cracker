@@ -19,20 +19,19 @@ function MaximumSubarraySum(arr) {
 // console.log(MaximumSubarraySum([1, 2, 3, -2, 5]));
 
 function MaximumSubarraySumWithKadanesMethod(arr) {
-  let res = arr[0];
-  let maxEndingHere = arr[0];
+  let maxSum = arr[0];
+  let currSum = arr[0];
   for (let j = 1; j < arr.length; j++) {
-    maxEndingHere = Math.max(arr[j], maxEndingHere + arr[j]);
-    res = Math.max(res, maxEndingHere);
-
-    console.log("maxEndingHere ===> ", maxEndingHere);
-    console.log("res ===> ", res);
+    if (currSum < 0) {
+      currSum = arr[j];
+    } else {
+      currSum = currSum + arr[j];
+    }
+    maxSum = Math.max(maxSum, currSum);
   }
-
-  return res;
+  return maxSum;
 }
-
-console.log(MaximumSubarraySumWithKadanesMethod([2, 3, -8, 7, -1, 2, 3])); // 11
-// console.log(MaximumSubarraySumWithKadanesMethod([-2, -4]));
-// console.log(MaximumSubarraySumWithKadanesMethod([5, 4, 1, 7, 8]));
-// console.log(MaximumSubarraySumWithKadanesMethod([1, 2, 3, -2, 5]));
+// console.log(MaximumSubarraySumWithKadanesMethod([2, 3, -8, 7, -1, 2, 3])); // 11
+// console.log(MaximumSubarraySumWithKadanesMethod([-2, -4])); // -2
+// console.log(MaximumSubarraySumWithKadanesMethod([5, 4, 1, 7, 8])); // 25
+console.log(MaximumSubarraySumWithKadanesMethod([1, 2, 3, -2, 5])); // 9
